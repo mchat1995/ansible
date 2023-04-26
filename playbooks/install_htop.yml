@@ -7,18 +7,22 @@
   - name: update repository index
     apt:
       update_cache: yes
+    when: ansible_distribution in ["Debian", "Ubuntu"]
 
   - name: installs nano
     apt:
       name: nano
       state: latest
+    when: ansible_distribution in ["Debian", "Ubuntu"]
 
   - name: intalls htop package
     apt:
       name: htop
       state: latest
+    when: ansible_distribution in ["Debian", "Ubuntu"]
 
   - name: installs cockpit
     apt:
       name: cockpit
       state: latest
+      when: ansible_distribution in ["Debian", "Ubuntu"]
