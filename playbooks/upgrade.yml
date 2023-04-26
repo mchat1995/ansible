@@ -18,6 +18,19 @@
       autoremove: yes
       purge: yes
 
+
+
+- 
+  become: false
+  hosts: "*"
+  tasks: 
+    - 
+      name: "Look For Pihole upgrade"
+      register: shell_output
+      shell: "pihole -up"
+    - 
+      debug: var=shell_output.stdout_lines
+
 - hosts: openmediavault
   become: true
   tasks:
