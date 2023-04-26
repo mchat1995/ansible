@@ -12,7 +12,11 @@
     apt:
       upgrade: dist
       update_cache: yes
-      when: ansible_distribution in ["Ubuntu"]
+
+  - name: auto removes packages
+    apt:
+      autoremove: yes
+      purge: yes
 
 - hosts: openmediavault
   become: true
@@ -26,3 +30,8 @@
     apt:
       upgrade: dist
       update_cache: yes
+
+  - name: auto removes packages
+    apt:
+      autoremove: yes
+      purge: yes
