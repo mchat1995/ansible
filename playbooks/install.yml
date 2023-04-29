@@ -1,0 +1,23 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: installs essential programs
+    apt:
+      name: 
+        - nano
+        - cockpit
+        - htop
+        - vim
+        - dnsutils
+        - neovim
+        - python3-neovim
+        - openvpn
+        - easy-rsa
+        - wireguard-tools
+        - zsh
+        - curl
+      state: latest
+    when: ansible_distribution in ["Debian", "Ubuntu"] 

@@ -1,28 +1,19 @@
 ---
 
-- hosts: pihole
+- hosts: all
   become: true
   tasks:
 
-  - name: update repository index
-    apt:
-      update_cache: yes
-
-  - name: install updates (Ubuntu, Debian) 
+  - name: install updates and autoremoves packages (Ubuntu, Debian) 
     apt:
       upgrade: dist
       update_cache: yes
-
-  - name: auto removes packages
-    apt:
       autoremove: yes
       purge: yes
 
-
-
 - 
   become: false
-  hosts: "*"
+  hosts: pihole
   tasks: 
     - 
       name: "Look For Pihole upgrade"
@@ -31,20 +22,3 @@
     - 
       debug: var=shell_output.stdout_lines
 
-- hosts: openmediavault
-  become: true
-  tasks:
-
-  - name: update repository index
-    apt:
-      update_cache: yes
-
-  - name: install updates (Ubuntu, Debian) 
-    apt:
-      upgrade: dist
-      update_cache: yes
-
-  - name: auto removes packages
-    apt:
-      autoremove: yes
-      purge: yes
