@@ -3,3 +3,6 @@ ubuntu@10.0.0.119
 
 [openmediavault]
 root@10.0.0.61
+
+[local]
+localhost ansible_connection=local

@@ -1,0 +1,13 @@
+---
+- name: localhost
+  hosts: localhost
+  connection: local
+  become: True
+  gather_facts: yes
+  tasks:
+    - name: upgrade with pacman
+      community.general.pacman:
+        update_cache: true
+        upgrade: true
+
+
