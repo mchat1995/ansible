@@ -6,3 +6,6 @@ root@10.0.0.61
 
 [local]
 localhost ansible_connection=local
+
+[proxmox]
+root@10.0.0.133

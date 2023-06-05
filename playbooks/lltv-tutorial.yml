@@ -1,6 +1,6 @@
 ---
 - name: install updates and autoremoves packages (Ubuntu, Debian)
-  hosts: openmediavault
+  hosts: openmediavault:pihole
   become: True
   tasks:
   - name: upgrade with apt
@@ -9,6 +9,7 @@
       update_cache: yes
       autoremove: yes
       purge: yes
+    when: ansible_distribution in ["Debian", "Ubuntu"]
 
 - name: localhost
   hosts: local
