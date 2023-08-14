@@ -1,11 +1,8 @@
 [pihole]
-ubuntu@10.0.0.119
-
+removed because private ip address
 [openmediavault]
-root@10.0.0.61
-
+removed because private ip address
 [local]
 localhost ansible_connection=local
-
 [proxmox]
-root@10.0.0.133
+removed because private ip address
