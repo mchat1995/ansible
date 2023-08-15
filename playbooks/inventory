@@ -1,8 +1,5 @@
 [pihole]
-removed because private ip address
 [openmediavault]
-removed because private ip address
 [local]
 localhost ansible_connection=local
 [proxmox]
-removed because private ip address
